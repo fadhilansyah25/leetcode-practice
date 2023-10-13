@@ -1,11 +1,6 @@
 func runningSum(nums []int) []int {
-    var result []int
-    var sum int
-
-    for _, num := range nums {
-        sum += num
-        result = append(result, sum)
+    for i := 1; i < len(nums); i++ {
+        nums[i] = nums[i-1] + nums[i]
     }
-
-    return result
+    return nums
 }
