@@ -7,7 +7,7 @@ func canConstruct(ransomNote string, magazine string) bool {
 
     for _, v := range ransomNote {
       letterHashMap[v]--
-      if(letterHashMap[v] < 0) {
+      if letterHashMap[v] < 0 {
         return false
       }
     }
