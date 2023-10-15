@@ -1,13 +1,13 @@
 func canConstruct(ransomNote string, magazine string) bool {
-    letterHashMap := map[rune]int{}
+    letterHashMap := make([]int, 26)
 
     for _, v := range magazine {
-      letterHashMap[v]++
+      letterHashMap[v - 'a']++
     }
 
     for _, v := range ransomNote {
-      letterHashMap[v]--
-      if letterHashMap[v] < 0 {
+      letterHashMap[v - 'a']--
+      if letterHashMap[v - 'a'] < 0 {
         return false
       }
     }
