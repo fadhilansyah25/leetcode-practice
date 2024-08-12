@@ -13,6 +13,7 @@ func isValid(s string) bool {
 		if v == ')' {
 			if stck.Top() == '(' {
 				stck.Pop()
+                continue
 			} else {
                 return false
             }
@@ -21,6 +22,7 @@ func isValid(s string) bool {
 		if v == ']' {
 			if stck.Top() == '[' {
 				stck.Pop()
+                continue
 			} else {
 				return false
 			}
@@ -29,6 +31,7 @@ func isValid(s string) bool {
 		if v == '}' {
 			if stck.Top() == '{' {
 				stck.Pop()
+                continue
 			} else {
 				return false
 			}
