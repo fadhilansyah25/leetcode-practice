@@ -6,36 +6,30 @@ func isValid(s string) bool {
 	}
 
 	for _, v := range s {
-		if v == '(' || v == '{' || v == '[' {
-			stck.Push(byte(v))
-		}
-
 		if v == ')' {
 			if stck.Top() == '(' {
 				stck.Pop()
-                continue
+				continue
 			} else {
-                return false
-            }
-		}
-
-		if v == ']' {
+				return false
+			}
+		} else if v == ']' {
 			if stck.Top() == '[' {
 				stck.Pop()
-                continue
+				continue
 			} else {
 				return false
 			}
-		}
-
-		if v == '}' {
+		} else if v == '}' {
 			if stck.Top() == '{' {
 				stck.Pop()
-                continue
+				continue
 			} else {
 				return false
 			}
-		}
+		} else {
+            stck.Push(byte(v))
+        }
 	}
 
 	return stck.isEmpty()
