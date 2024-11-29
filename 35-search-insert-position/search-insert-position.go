@@ -1,14 +1,15 @@
 func searchInsert(nums []int, target int) int {
     var pos int = 0;
 
-    for i := 0; i < len(nums); i++ {
-        if nums[i] == target {
-            pos = i
+    for pos < len(nums) {
+        if nums[pos] == target {
             break;
         }
 
-        if nums[i] < target {
+        if nums[pos] < target {
             pos++;
+        } else {
+            break
         }
     }
 
