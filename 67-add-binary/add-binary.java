@@ -10,28 +10,18 @@ class Solution {
             int sum = 0;
             sum += carry;
 
-            if (i >= 0) {
-               sum += a.charAt(i) - '0';
-            }
+            if (i >= 0) sum += a.charAt(i) - '0';
 
-            if(j >= 0) {
-                sum += b.charAt(j) - '0';
-            }
+            if (j >= 0) sum += b.charAt(j) - '0';
 
-            if(sum >= 2) {
-                carry = 1;
-            } else {
-                carry = 0;
-            }
-
+            carry = sum > 1 ? 1 : 0;
             res = (sum % 2) + res;
 
             i--;
             j--;
         }
 
-        if(carry > 0) res = carry + res;
 
-        return res;
+        return carry != 0 ? carry + res : res;
     }
 }
