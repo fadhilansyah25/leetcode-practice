@@ -11,11 +11,11 @@ class Solution {
             sum += carry;
 
             if (i >= 0) {
-               sum += Character.getNumericValue(a.charAt(i));
+               sum += a.charAt(i) - '0';
             }
 
             if(j >= 0) {
-                sum += Character.getNumericValue(b.charAt(j));
+                sum += b.charAt(j) - '0';
             }
 
             if(sum >= 2) {
