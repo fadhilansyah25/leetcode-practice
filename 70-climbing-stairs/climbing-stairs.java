@@ -3,17 +3,13 @@ class Solution {
         int prev = 0;
         int current = 1;
 
-        int result = 1;
-
-        for(int i = 1; i < n; i++) {
+        for(int i = 0; i < n; i++) {
             int temp = current;
             current += prev;
             prev = temp;
-
-            result = current + prev;
         }
 
 
-        return result;
+        return current;
     }
 }
