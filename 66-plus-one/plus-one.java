@@ -19,12 +19,9 @@ class Solution {
                 carry = 0;
             }
         }
-
-        // 999
-        // 1, 0, 0, 0
-
         if(carry != 0) res.add(0, 1);
 
+        // convert into new array from ArrayList
         int[] result = new int[res.size()];
 
         for(int i = 0; i < res.size(); i++) {
